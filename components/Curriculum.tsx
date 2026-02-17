@@ -1,7 +1,6 @@
 const days = [
   {
-    dayLabel: "DAY 1 OF 5",
-    time: "4pm – 7pm",
+    dayLabel: "DAY 1 OF 5  \u2022  4pm \u2013 7pm",
     title: "Orientation Evening",
     summary:
       "Day one is all about arriving, settling in and getting to know the new friends you\u2019re going to be spending the week with.",
@@ -18,8 +17,7 @@ const days = [
     cardBg: "bg-[#fdf6e8]",
   },
   {
-    dayLabel: "DAY 2 OF 5",
-    time: "10am – 6pm",
+    dayLabel: "DAY 2 OF 5  \u2022  10am \u2013 6pm",
     title: "Collaboration & Decision Making",
     summary:
       "Learn and deeply understand the fundamental reason why teams struggle to collaborate on complex challenges (and how Facilitation can help).",
@@ -35,8 +33,7 @@ const days = [
     cardBg: "bg-[#e8faf4]",
   },
   {
-    dayLabel: "DAY 3 OF 5",
-    time: "10am – 6pm",
+    dayLabel: "DAY 3 OF 5  \u2022  10am \u2013 6pm",
     title: "Facilitation Fundamentals",
     summary:
       "Understand the foundational theory, skills and techniques designed to enable facilitators to help groups to collaborate better and make better decisions, faster.",
@@ -51,8 +48,7 @@ const days = [
     cardBg: "bg-[#f3edff]",
   },
   {
-    dayLabel: "DAY 4 OF 5",
-    time: "10am – 6pm",
+    dayLabel: "DAY 4 OF 5  \u2022  10am \u2013 6pm",
     title: "Workshop Design 101",
     summary:
       "Learn the practical tools every facilitator needs to be familiar with to design, modify, and run successful purpose-built, custom workshops.",
@@ -67,8 +63,7 @@ const days = [
     cardBg: "bg-[#e6f4ff]",
   },
   {
-    dayLabel: "DAY 5 OF 5",
-    time: "10am – 6pm",
+    dayLabel: "DAY 5 OF 5  \u2022  10am \u2013 6pm",
     title: "Live Practice & Graduation Ceremony",
     summary:
       "You\u2019ll put your new skills to the test in a low-risk, fun, live practice session, and then receive your certification!",
@@ -90,12 +85,12 @@ export default function Curriculum() {
       <div className="max-w-[1280px] mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-black leading-tight max-w-4xl mx-auto">
+          <h2 className="text-[48px] font-bold text-black leading-[100%] text-center max-w-4xl mx-auto">
             A Decade of Experience,
             <br />
             Turned into <em className="italic">Days</em> of Learning
           </h2>
-          <p className="mt-6 text-lg text-brand-muted max-w-2xl mx-auto">
+          <p className="mt-6 text-[24px] font-medium text-black leading-[120%] max-w-2xl mx-auto">
             Full-Stack Facilitator compresses over 14 years of practical
             facilitation and collaboration experience into 5 days of hands-on
             learning!
@@ -103,31 +98,31 @@ export default function Curriculum() {
         </div>
 
         {/* Days */}
-        <div className="space-y-6">
+        <div className="space-y-10">
           {days.map((day, i) => (
             <div
               key={i}
-              className="grid md:grid-cols-2 gap-0 rounded-2xl border border-gray-200 overflow-hidden"
+              className="grid md:grid-cols-2 gap-8 md:gap-12 items-start"
             >
-              {/* Left: Day card */}
-              <div className={`${day.cardBg} p-8 md:p-10`}>
-                <p className="text-xs font-semibold tracking-wider uppercase text-brand-muted mb-3">
-                  {day.dayLabel} &bull; {day.time}
+              {/* Left: Day card with border */}
+              <div className={`${day.cardBg} rounded-2xl border border-gray-200 p-8 md:p-10`}>
+                <p className="text-[13px] font-bold tracking-[0.05em] uppercase text-black/70 leading-[125%] mb-3">
+                  {day.dayLabel}
                 </p>
-                <h3 className="text-2xl md:text-3xl font-black text-black mb-4">
+                <h3 className="text-[32px] font-bold text-black leading-[120%] mb-4">
                   {day.title}
                 </h3>
-                <p className="text-base text-brand-gray leading-relaxed mb-6">
+                <p className="text-[22px] font-medium text-[#333] leading-[120%] mb-8">
                   {day.summary}
                 </p>
-                <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-brand-muted mb-3">
+                <p className="text-[13px] font-bold tracking-[0.05em] uppercase text-black/70 leading-[125%] mb-3">
                   {day.tagLabel}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {day.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-sm font-semibold bg-brand-yellow/50 text-black px-4 py-1.5 rounded-full"
+                      className="text-sm font-semibold bg-brand-yellow/40 text-black px-4 py-2 rounded-full"
                     >
                       {tag}
                     </span>
@@ -135,16 +130,18 @@ export default function Curriculum() {
                 </div>
               </div>
 
-              {/* Right: What to expect / learn */}
-              <div className="bg-white p-8 md:p-10 flex flex-col justify-center">
-                <p className="text-base font-bold text-black mb-5">
+              {/* Right: What to expect / learn - no border */}
+              <div className="pt-2 md:pt-4">
+                <p className="text-[20px] font-bold text-black leading-[130%] mb-6">
                   {day.detailsLabel}
                 </p>
-                <ul className="space-y-4">
+                <ul className="space-y-5">
                   {day.details.map((detail, j) => (
-                    <li key={j} className="flex gap-3 text-base text-brand-gray leading-relaxed">
-                      <span className="shrink-0 mt-1">&bull;</span>
-                      {detail}
+                    <li key={j} className="flex gap-4 items-start">
+                      <span className="shrink-0 mt-2 w-2 h-2 rounded-full bg-brand-yellow" />
+                      <span className="text-[18px] font-medium text-[#333] leading-[130%]">
+                        {detail}
+                      </span>
                     </li>
                   ))}
                 </ul>
