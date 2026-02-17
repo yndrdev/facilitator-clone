@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-brand-yellow: #fff200;
+  --color-brand-black: #000000;
+  --color-brand-dark: #0f0f10;
+  --color-brand-gray: #333333;
+  --color-brand-muted: #666666;
+  --color-brand-light: #fafafa;
+  --color-brand-border: #e5e5e5;
+  --color-card-cream: #fff4e0;
+  --color-card-cyan: #e0fff8;
+  --color-card-lavender: #f3edff;
+  --color-card-blue: #e6f4ff;
+  --color-card-pink: #f7e9f5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-brand-gray);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Marquee animation for logos */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Staggered fade-in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Sunburst rays */
+@keyframes sunPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+.sun-pulse {
+  animation: sunPulse 3s ease-in-out infinite;
+}
+
+/* Smooth accordion */
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.accordion-content.open {
+  grid-template-rows: 1fr;
+}
+
+.accordion-content > div {
+  overflow: hidden;
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
