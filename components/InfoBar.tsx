@@ -9,23 +9,21 @@ export default function InfoBar() {
   return (
     <section className="bg-white">
       <div className="max-w-[1280px] mx-auto px-6 py-8">
-        <div className="bg-[#f5f5f5] rounded-2xl px-8 py-6">
-          <div className="grid grid-cols-2 md:grid-cols-4">
+        <div className="border border-[#e5e5e5] rounded-2xl px-6 md:px-10 py-7">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-5">
             {items.map((item, index) => (
               <div
                 key={item.label}
-                className={`flex flex-col gap-1.5 px-6 ${
-                  index === 0 ? "pl-2" : ""
-                } ${
+                className={`flex flex-col gap-2 px-5 md:px-6 ${
                   index < items.length - 1
-                    ? "border-r border-brand-border"
+                    ? "border-r border-[#e5e5e5]"
                     : ""
-                }`}
+                } ${index === 0 ? "pl-0" : ""}`}
               >
-                <p className="text-sm font-bold text-black leading-snug">
+                <p className="text-[22px] font-bold text-black leading-[130%]">
                   {item.label}
                 </p>
-                <p className="text-[15px] font-normal text-brand-muted leading-snug">
+                <p className="text-[18px] font-medium text-[#333] leading-[130%]">
                   {item.value}
                 </p>
               </div>
